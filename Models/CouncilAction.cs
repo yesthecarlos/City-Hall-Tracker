@@ -15,16 +15,12 @@ namespace CityHallTracker.Models
 
       public virtual ApplicationUser User { get; set; }
 
-      [Display(Name="Action Id")]
+      [Required]
       public int CouncilActionId { get; set; }
-
-      [Display(Name="Action Title")]
       public string CouncilActionTitle { get; set; }
 
-      public string CouncilActionTags { get; set; }
-      public string CouncilActionYeas { get; set; }
-      public string CouncilActionNays { get; set; }
-      public string CouncilActionAbstain { get; set; }
+      public string CouncilActionTag { get; set; }
+      public string CouncilActionContextLink { get; set; }
 
       public virtual ICollection<CouncilActionCouncilMember> JoinEntities { get; set; }
     }

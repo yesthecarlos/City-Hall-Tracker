@@ -1,3 +1,9 @@
+using System.Collections.Generic;
+using System.Collections;
+using System;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace CityHallTracker.Models
 {
     public class CouncilMember
@@ -17,6 +23,6 @@ namespace CityHallTracker.Models
       public int CouncilMemberDistrict { get; set; }
       public string CouncilMemberStartDate { get; set; }
       public string CouncilMemberEndDate { get; set; }
-      public virtual ICollection<CouncilAction> CouncilActions { get; set; }
+      public virtual ICollection<CouncilActionCouncilMember> JoinEntities { get; set; }
     }
 }

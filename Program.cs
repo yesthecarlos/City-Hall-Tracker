@@ -7,7 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
-namespace City_Hall_Tracker
+namespace CityHallTracker
 {
     public class Program
     {
