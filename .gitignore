@@ -1,4 +1,6 @@
-*/obj
-*/bin
-*/appsettings.json
+/obj
+/bin
+appsettings.json
+appsettings.Development.json
+**/wwwroot/lib
 .DS_Store
