@@ -21,9 +21,10 @@ namespace CityHallTracker.Models
       [Display(Name="Action Title")]
       public string CouncilActionTitle { get; set; }
 
-      public string[] CouncilActionTags { get; set; }
-      public string[] CouncilActionYeas { get; set; }
-      public string[] CouncilActionNays { get; set; }
+      public string CouncilActionTags { get; set; }
+      public string CouncilActionYeas { get; set; }
+      public string CouncilActionNays { get; set; }
+      public string CouncilActionAbstain { get; set; }
 
       public virtual ICollection<CouncilActionCouncilMember> JoinEntities { get; set; }
     }
