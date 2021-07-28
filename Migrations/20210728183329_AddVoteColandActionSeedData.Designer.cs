@@ -2,14 +2,16 @@
 using CityHallTracker.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace CityHallTracker.Migrations
 {
     [DbContext(typeof(CityHallTrackerContext))]
-    partial class CityHallTrackerContextModelSnapshot : ModelSnapshot
+    [Migration("20210728183329_AddVoteColandActionSeedData")]
+    partial class AddVoteColandActionSeedData
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -71,57 +73,6 @@ namespace CityHallTracker.Migrations
                         .IsUnique();
 
                     b.ToTable("CouncilActionCouncilMember");
-
-                    b.HasData(
-                        new
-                        {
-                            CouncilActionCouncilMemberId = 1,
-                            CouncilActionId = 1,
-                            CouncilMemberId = 8,
-                            CouncilMembersVote = "Yes"
-                        },
-                        new
-                        {
-                            CouncilActionCouncilMemberId = 2,
-                            CouncilActionId = 1,
-                            CouncilMemberId = 9,
-                            CouncilMembersVote = "Yes"
-                        },
-                        new
-                        {
-                            CouncilActionCouncilMemberId = 3,
-                            CouncilActionId = 1,
-                            CouncilMemberId = 11,
-                            CouncilMembersVote = "Yes"
-                        },
-                        new
-                        {
-                            CouncilActionCouncilMemberId = 4,
-                            CouncilActionId = 1,
-                            CouncilMemberId = 4,
-                            CouncilMembersVote = "Yes"
-                        },
-                        new
-                        {
-                            CouncilActionCouncilMemberId = 5,
-                            CouncilActionId = 1,
-                            CouncilMemberId = 6,
-                            CouncilMembersVote = "Yes"
-                        },
-                        new
-                        {
-                            CouncilActionCouncilMemberId = 6,
-                            CouncilActionId = 1,
-                            CouncilMemberId = 2,
-                            CouncilMembersVote = "Yes"
-                        },
-                        new
-                        {
-                            CouncilActionCouncilMemberId = 7,
-                            CouncilActionId = 1,
-                            CouncilMemberId = 7,
-                            CouncilMembersVote = "Yes"
-                        });
                 });
 
             modelBuilder.Entity("CityHallTracker.Models.CouncilMember", b =>
@@ -226,14 +177,6 @@ namespace CityHallTracker.Migrations
                             CouncilMemberDistrict = 1,
                             CouncilMemberEndDate = "December 31, 2019",
                             CouncilMemberName = "Avina Gutierrez",
-                            CouncilMemberStartDate = "January 5, 2016"
-                        },
-                        new
-                        {
-                            CouncilMemberId = 11,
-                            CouncilMemberDistrict = 2,
-                            CouncilMemberEndDate = "December 31, 2019",
-                            CouncilMemberName = "Dulce Gutierrez",
                             CouncilMemberStartDate = "January 5, 2016"
                         });
                 });

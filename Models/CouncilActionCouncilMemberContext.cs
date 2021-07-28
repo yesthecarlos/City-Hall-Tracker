@@ -14,6 +14,7 @@ namespace CityHallTracker.Models
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
       optionsBuilder.UseLazyLoadingProxies();
+      optionsBuilder.EnableSensitiveDataLogging();
     }
     protected override void OnModelCreating(ModelBuilder builder)
   {
@@ -33,18 +34,36 @@ namespace CityHallTracker.Models
         new CouncilMember { CouncilMemberId = 4, CouncilMemberName = "Kay Funk", CouncilMemberDistrict = 4, CouncilMemberStartDate = "January 9, 2018", CouncilMemberEndDate = "December 31, 2021" },
         new CouncilMember { CouncilMemberId = 5, CouncilMemberName = "Soneya Lund", CouncilMemberDistrict = 5, CouncilMemberStartDate = "January 7, 2020", CouncilMemberEndDate = "December 31, 2023" },
         new CouncilMember { CouncilMemberId = 6, CouncilMemberName = "Brad Hill", CouncilMemberDistrict = 6, CouncilMemberStartDate = "January 9, 2018", CouncilMemberEndDate = "December 31, 2021" },
-        new CouncilMember { CouncilMemberId = 7, CouncilMemberName = "Holly Cousens", CouncilMemberDistrict = 7, CouncilMemberStartDate = "January 7, 2020", CouncilMemberEndDate = "December 31, 2023" }
+        new CouncilMember { CouncilMemberId = 7, CouncilMemberName = "Holly Cousens", CouncilMemberDistrict = 7, CouncilMemberStartDate = "January 7, 2020", CouncilMemberEndDate = "December 31, 2023" },
+        new CouncilMember { CouncilMemberId = 8, CouncilMemberName = "Kathy Coffey", CouncilMemberDistrict = 5, CouncilMemberStartDate = "January 5, 2016", CouncilMemberEndDate = "December 31, 2019" },
+        new CouncilMember { CouncilMemberId = 9, CouncilMemberName = "Carmen Mendez", CouncilMemberDistrict = 3, CouncilMemberStartDate = "January 5, 2016", CouncilMemberEndDate = "December 31, 2019" },
+        new CouncilMember { CouncilMemberId = 10, CouncilMemberName = "Avina Gutierrez", CouncilMemberDistrict = 1, CouncilMemberStartDate = "January 5, 2016", CouncilMemberEndDate = "December 31, 2019" },
+        new CouncilMember { CouncilMemberId = 11, CouncilMemberName = "Dulce Gutierrez", CouncilMemberDistrict = 2, CouncilMemberStartDate = "January 5, 2016", CouncilMemberEndDate = "December 31, 2019" }
+
+
+
       );
 
       builder.Entity<CouncilAction>()
       .HasData(
-        new CouncilAction { CouncilActionId = 1, CouncilActionTitle = "Eliana Macias", CouncilActionTag = 1, CouncilActionContextLink = "January 7, 2020" },
-        new CouncilAction { CouncilActionId = 2, CouncilActionTitle = "Jason White", CouncilActionTag = 2, CouncilActionContextLink = "January 9, 2018" },
-        new CouncilAction { CouncilActionId = 3, CouncilActionTitle = "Patricia Byers", CouncilActionTag = 3, CouncilActionContextLink = "January 7, 2020" },
-        new CouncilAction { CouncilActionId = 4, CouncilActionTitle = "Kay Funk", CouncilActionTag = 4, CouncilActionContextLink = "January 9, 2018" },
-        new CouncilAction { CouncilActionId = 5, CouncilActionTitle = "Soneya Lund", CouncilActionTag = 5, CouncilActionContextLink = "January 7, 2020" },
-        new CouncilAction { CouncilActionId = 6, CouncilActionTitle = "Brad Hill", CouncilActionTag = 6, CouncilActionContextLink = "January 9, 2018" },
-        new CouncilAction { CouncilActionId = 7, CouncilActionTitle = "Holly Cousens", CouncilActionTag = 7, CouncilActionContextLink = "January 7, 2020" }
+        new CouncilAction { CouncilActionId = 1, CouncilActionTitle = "Make Kathy Coffey Mayor", CouncilActionTag = "Politics", CouncilActionContextLink = "https://www.seattletimes.com/seattle-news/yakima-mayor-drives-suv-into-rite-aid-building/" }
+      //   new CouncilAction { CouncilActionId = 2, CouncilActionTitle = "Jason White", CouncilActionTag = 2, CouncilActionContextLink = "January 9, 2018" },
+      //   new CouncilAction { CouncilActionId = 3, CouncilActionTitle = "Patricia Byers", CouncilActionTag = 3, CouncilActionContextLink = "January 7, 2020" },
+      //   new CouncilAction { CouncilActionId = 4, CouncilActionTitle = "Kay Funk", CouncilActionTag = 4, CouncilActionContextLink = "January 9, 2018" },
+      //   new CouncilAction { CouncilActionId = 5, CouncilActionTitle = "Soneya Lund", CouncilActionTag = 5, CouncilActionContextLink = "January 7, 2020" },
+      //   new CouncilAction { CouncilActionId = 6, CouncilActionTitle = "Brad Hill", CouncilActionTag = 6, CouncilActionContextLink = "January 9, 2018" },
+      //   new CouncilAction { CouncilActionId = 7, CouncilActionTitle = "Holly Cousens", CouncilActionTag = 7, CouncilActionContextLink = "January 7, 2020" }
+      );
+
+      builder.Entity<CouncilActionCouncilMember>()
+      .HasData(
+        new CouncilActionCouncilMember { CouncilActionCouncilMemberId = 1, CouncilMemberId = 8, CouncilActionId = 1, CouncilMembersVote = "Yes" },
+        new CouncilActionCouncilMember { CouncilActionCouncilMemberId = 2, CouncilMemberId = 9, CouncilActionId = 1, CouncilMembersVote = "Yes" },
+        new CouncilActionCouncilMember { CouncilActionCouncilMemberId = 3, CouncilMemberId = 11, CouncilActionId = 1, CouncilMembersVote = "Yes" },
+        new CouncilActionCouncilMember { CouncilActionCouncilMemberId = 4, CouncilMemberId = 4, CouncilActionId = 1, CouncilMembersVote = "Yes" },
+        new CouncilActionCouncilMember { CouncilActionCouncilMemberId = 5, CouncilMemberId = 6, CouncilActionId = 1, CouncilMembersVote = "Yes" },
+        new CouncilActionCouncilMember { CouncilActionCouncilMemberId = 6, CouncilMemberId = 2, CouncilActionId = 1, CouncilMembersVote = "Yes" },
+        new CouncilActionCouncilMember { CouncilActionCouncilMemberId = 7, CouncilMemberId = 7, CouncilActionId = 1, CouncilMembersVote = "Yes" }
       );
   }
   }

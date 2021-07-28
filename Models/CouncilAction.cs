@@ -18,7 +18,7 @@ namespace CityHallTracker.Models
       [Required]
       public int CouncilActionId { get; set; }
       public string CouncilActionTitle { get; set; }
-
+      public string CouncilActionDate { get; set; }
       public string CouncilActionTag { get; set; }
       public string CouncilActionContextLink { get; set; }
 

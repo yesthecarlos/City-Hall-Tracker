@@ -11,6 +11,7 @@ namespace CityHallTracker.Models
       public int CouncilActionCouncilMemberId { get; set; }
       public int CouncilMemberId { get; set; }
       public int CouncilActionId { get; set; }
+      public string CouncilMembersVote { get; set; }
       public virtual CouncilMember CouncilMember { get; set; }
       public virtual CouncilAction CouncilAction { get; set; }
     }
