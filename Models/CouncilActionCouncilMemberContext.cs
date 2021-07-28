@@ -35,7 +35,17 @@ namespace CityHallTracker.Models
         new CouncilMember { CouncilMemberId = 6, CouncilMemberName = "Brad Hill", CouncilMemberDistrict = 6, CouncilMemberStartDate = "January 9, 2018", CouncilMemberEndDate = "December 31, 2021" },
         new CouncilMember { CouncilMemberId = 7, CouncilMemberName = "Holly Cousens", CouncilMemberDistrict = 7, CouncilMemberStartDate = "January 7, 2020", CouncilMemberEndDate = "December 31, 2023" }
       );
-      
+
+      builder.Entity<CouncilAction>()
+      .HasData(
+        new CouncilAction { CouncilActionId = 1, CouncilActionTitle = "Eliana Macias", CouncilActionTag = 1, CouncilActionContextLink = "January 7, 2020" },
+        new CouncilAction { CouncilActionId = 2, CouncilActionTitle = "Jason White", CouncilActionTag = 2, CouncilActionContextLink = "January 9, 2018" },
+        new CouncilAction { CouncilActionId = 3, CouncilActionTitle = "Patricia Byers", CouncilActionTag = 3, CouncilActionContextLink = "January 7, 2020" },
+        new CouncilAction { CouncilActionId = 4, CouncilActionTitle = "Kay Funk", CouncilActionTag = 4, CouncilActionContextLink = "January 9, 2018" },
+        new CouncilAction { CouncilActionId = 5, CouncilActionTitle = "Soneya Lund", CouncilActionTag = 5, CouncilActionContextLink = "January 7, 2020" },
+        new CouncilAction { CouncilActionId = 6, CouncilActionTitle = "Brad Hill", CouncilActionTag = 6, CouncilActionContextLink = "January 9, 2018" },
+        new CouncilAction { CouncilActionId = 7, CouncilActionTitle = "Holly Cousens", CouncilActionTag = 7, CouncilActionContextLink = "January 7, 2020" }
+      );
   }
   }
 }
