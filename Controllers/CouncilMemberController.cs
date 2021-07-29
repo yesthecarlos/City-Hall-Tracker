@@ -26,9 +26,9 @@ namespace CityHallTracker.Controllers
 
     public async Task<ActionResult> Index()
     {
-      var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-      var currentUser = await _userManager.FindByIdAsync(userId); 
-      var userCouncilMembers = _db.CouncilMembers.Where(entry => entry.User.Id == currentUser.Id).ToList();
+      // var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+      // var currentUser = await _userManager.FindByIdAsync(userId); 
+      var userCouncilMembers = _db.CouncilMembers.ToList();
       return View (userCouncilMembers);
     }
 
@@ -66,7 +66,7 @@ namespace CityHallTracker.Controllers
     public ActionResult Edit(int id)
     {
       var thisCouncilMember = _db.CouncilMembers.FirstOrDefault(CouncilMember => CouncilMember.CouncilMemberId == id);
-      ViewBag.CouncilActionId = new SelectList(_db.CouncilActions, "CouncilActionId", "CouncilActionName");
+      ViewBag.CouncilActionId = new SelectList(_db.CouncilActions, "CouncilActionId", "CouncilActionTitle");
       return View(thisCouncilMember);
     }
 
@@ -85,7 +85,7 @@ namespace CityHallTracker.Controllers
     public ActionResult AddCouncilAction(int id)
     {
       var thisCouncilMember = _db.CouncilMembers.FirstOrDefault(CouncilMember => CouncilMember.CouncilMemberId == id);
-      ViewBag.CouncilActionId = new SelectList(_db.CouncilActions, "CouncilActionId", "CouncilActionName");
+      ViewBag.CouncilActionId = new SelectList(_db.CouncilActions, "CouncilActionId", "CouncilActionTitle");
       return View(thisCouncilMember);
     }
 
