@@ -1,0 +1,23 @@
+@{
+  Layout = "_Layout";
+}
+
+@model CityHallTracker.Models.CouncilAction
+
+<h2>Edit</h2>
+
+<h4>Edit this Council Action: @Html.DisplayFor(model => model.CouncilActionTitle)</h4>
+
+@using (Html.BeginForm())
+{
+  @Html.HiddenFor(model => model.CouncilActionId)
+
+  @Html.LabelFor(model => model.CouncilActionTitle)
+  @Html.EditorFor(model => model.CouncilActionTitle, new { @class = "text", required = "required" })
+
+  @Html.Label("Select Councilmember")
+  @Html.DropDownList("CouncilMemberId")
+
+  <input type="submit" value="Save" />
+}
+<p>@Html.ActionLink("Back to Council Actions list", "Index")</p>

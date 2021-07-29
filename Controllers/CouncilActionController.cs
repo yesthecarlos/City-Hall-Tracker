@@ -11,7 +11,7 @@ using System.Security.Claims;
 
 namespace CityHallTracker.Controllers
 {
-  [Authorize]
+  [AllowAnonymous]
   public class CouncilActionsController : Controller
   {
     private readonly CityHallTrackerContext _db;

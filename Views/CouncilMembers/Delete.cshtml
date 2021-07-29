@@ -1,0 +1,14 @@
+@{
+  Layout = "_Layout";
+}
+
+@model CityHallTracker.Models.CouncilMember
+
+<h2>Are you sure you want to delete this Councilmember?</h2>
+
+@Html.DisplayNameFor(model => model.CouncilMemberName): @Html.DisplayFor(model => model.CouncilMemberName)
+@using (Html.BeginForm())
+{
+  <input type="submit" value="Delete" />
+}
+@Html.ActionLink("Back to list", "Index")

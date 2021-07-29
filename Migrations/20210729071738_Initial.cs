@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace CityHallTracker.Migrations
 {
-    public partial class initial : Migration
+    public partial class Initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -161,6 +161,7 @@ namespace CityHallTracker.Migrations
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     UserId = table.Column<string>(type: "varchar(255) CHARACTER SET utf8mb4", nullable: true),
                     CouncilActionTitle = table.Column<string>(type: "longtext CHARACTER SET utf8mb4", nullable: true),
+                    CouncilActionDate = table.Column<string>(type: "longtext CHARACTER SET utf8mb4", nullable: true),
                     CouncilActionTag = table.Column<string>(type: "longtext CHARACTER SET utf8mb4", nullable: true),
                     CouncilActionContextLink = table.Column<string>(type: "longtext CHARACTER SET utf8mb4", nullable: true)
                 },
@@ -205,7 +206,8 @@ namespace CityHallTracker.Migrations
                     CouncilActionCouncilMemberId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     CouncilMemberId = table.Column<int>(type: "int", nullable: false),
-                    CouncilActionId = table.Column<int>(type: "int", nullable: false)
+                    CouncilActionId = table.Column<int>(type: "int", nullable: false),
+                    CouncilMembersVote = table.Column<string>(type: "longtext CHARACTER SET utf8mb4", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -222,6 +224,43 @@ namespace CityHallTracker.Migrations
                         principalTable: "CouncilMembers",
                         principalColumn: "CouncilMemberId",
                         onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.InsertData(
+                table: "CouncilActions",
+                columns: new[] { "CouncilActionId", "CouncilActionContextLink", "CouncilActionDate", "CouncilActionTag", "CouncilActionTitle", "UserId" },
+                values: new object[] { 1, "https://www.seattletimes.com/seattle-news/yakima-mayor-drives-suv-into-rite-aid-building/", "January 2, 2018", "Politics", "Make Kathy Coffey Mayor", null });
+
+            migrationBuilder.InsertData(
+                table: "CouncilMembers",
+                columns: new[] { "CouncilMemberId", "CouncilMemberDistrict", "CouncilMemberEndDate", "CouncilMemberName", "CouncilMemberStartDate", "UserId" },
+                values: new object[,]
+                {
+                    { 1, 1, "December 31, 2023", "Eliana Macias", "January 7, 2020", null },
+                    { 2, 2, "December 31, 2021", "Jason White", "January 2, 2018", null },
+                    { 3, 3, "December 31, 2023", "Patricia Byers", "January 7, 2020", null },
+                    { 4, 4, "December 31, 2021", "Kay Funk", "January 2, 2018", null },
+                    { 5, 5, "December 31, 2023", "Soneya Lund", "January 7, 2020", null },
+                    { 6, 6, "December 31, 2021", "Brad Hill", "January 2, 2018", null },
+                    { 7, 7, "December 31, 2023", "Holly Cousens", "January 7, 2020", null },
+                    { 8, 5, "December 31, 2019", "Kathy Coffey", "January 5, 2016", null },
+                    { 9, 3, "December 31, 2019", "Carmen Mendez", "January 5, 2016", null },
+                    { 10, 1, "December 31, 2019", "Avina Gutierrez", "January 5, 2016", null },
+                    { 11, 2, "December 31, 2019", "Dulce Gutierrez", "January 5, 2016", null }
+                });
+
+            migrationBuilder.InsertData(
+                table: "CouncilActionCouncilMember",
+                columns: new[] { "CouncilActionCouncilMemberId", "CouncilActionId", "CouncilMemberId", "CouncilMembersVote" },
+                values: new object[,]
+                {
+                    { 6, 1, 2, "Yes" },
+                    { 4, 1, 4, "Yes" },
+                    { 5, 1, 6, "Yes" },
+                    { 7, 1, 7, "Yes" },
+                    { 1, 1, 8, "Yes" },
+                    { 2, 1, 9, "Yes" },
+                    { 3, 1, 11, "Yes" }
                 });
 
             migrationBuilder.CreateIndex(
@@ -267,10 +306,9 @@ namespace CityHallTracker.Migrations
                 column: "CouncilActionId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_CouncilActionCouncilMember_CouncilMemberId_CouncilActionId",
+                name: "IX_CouncilActionCouncilMember_CouncilMemberId",
                 table: "CouncilActionCouncilMember",
-                columns: new[] { "CouncilMemberId", "CouncilActionId" },
-                unique: true);
+                column: "CouncilMemberId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_CouncilActions_UserId",

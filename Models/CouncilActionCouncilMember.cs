@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace CityHallTracker.Models
 
 {
-  [Index(nameof(CouncilMemberId), nameof(CouncilActionId), IsUnique = true)]
+  // [Index(nameof(CouncilMemberId), nameof(CouncilActionId), IsUnique = true)]
   public class CouncilActionCouncilMember
     {       
       public int CouncilActionCouncilMemberId { get; set; }

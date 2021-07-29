@@ -138,8 +138,7 @@ namespace CityHallTracker.Migrations
 
                     b.HasIndex("CouncilActionId");
 
-                    b.HasIndex("CouncilMemberId", "CouncilActionId")
-                        .IsUnique();
+                    b.HasIndex("CouncilMemberId");
 
                     b.ToTable("CouncilActionCouncilMember");
 

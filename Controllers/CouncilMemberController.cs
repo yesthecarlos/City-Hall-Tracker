@@ -12,7 +12,7 @@ using CityHallTracker.Models;
 
 namespace CityHallTracker.Controllers
 {
-  [Authorize]
+  [AllowAnonymous]
   public class CouncilMembersController : Controller
   {
     private readonly CityHallTrackerContext _db;
@@ -34,7 +34,7 @@ namespace CityHallTracker.Controllers
 
     public ActionResult Create()
     {
-      ViewBag.CouncilActionId = new SelectList(_db.CouncilActions, "CouncilActionId", "CouncilActionName");
+      ViewBag.CouncilActionId = new SelectList(_db.CouncilActions, "CouncilActionId", "CouncilActionTitle");
       return View();
     }
 

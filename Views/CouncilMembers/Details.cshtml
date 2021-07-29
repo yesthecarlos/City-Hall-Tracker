@@ -1,0 +1,30 @@
+@{
+  Layout = "_Layout";
+}
+
+@model CityHallTracker.Models.CouncilMember
+
+<h2>Councilmember Details</h2>
+<hr />
+<h3>@Html.DisplayNameFor(model => model.CouncilMemberName): @Html.DisplayFor(model => model.CouncilMemberName)</h3>
+
+@if(@Model.JoinEntities.Count == 0)
+{
+  <p>This Councilmember does not have any Council Actions.</p>
+}
+else
+{
+  <h4>Council Actions the Councilmember has:</h4>
+  <ul>
+  @foreach(var join in Model.JoinEntities)
+  {
+    <li>@join.CouncilAction.CouncilActionTitle</li>
+  }
+  </ul>
+}
+
+<p>@Html.ActionLink("Add a Council Action", "AddCouncilAction", new { id = Model.CouncilMemberId })</p>
+
+<p>@Html.ActionLink("Back to list", "Index")</p>
+<p>@Html.ActionLink("Edit Councilmember", "Edit", new { id = Model.CouncilMemberId })</p>
+<p>@Html.ActionLink("Delete CouncilMmmber", "Delete", new { id = Model.CouncilMemberId })</p>

@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CityHallTracker.Migrations
 {
     [DbContext(typeof(CityHallTrackerContext))]
-    [Migration("20210728141832_initial")]
-    partial class initial
+    [Migration("20210729071738_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -92,6 +92,9 @@ namespace CityHallTracker.Migrations
                     b.Property<string>("CouncilActionContextLink")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
+                    b.Property<string>("CouncilActionDate")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
                     b.Property<string>("CouncilActionTag")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
@@ -106,6 +109,16 @@ namespace CityHallTracker.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("CouncilActions");
+
+                    b.HasData(
+                        new
+                        {
+                            CouncilActionId = 1,
+                            CouncilActionContextLink = "https://www.seattletimes.com/seattle-news/yakima-mayor-drives-suv-into-rite-aid-building/",
+                            CouncilActionDate = "January 2, 2018",
+                            CouncilActionTag = "Politics",
+                            CouncilActionTitle = "Make Kathy Coffey Mayor"
+                        });
                 });
 
             modelBuilder.Entity("CityHallTracker.Models.CouncilActionCouncilMember", b =>
@@ -120,14 +133,67 @@ namespace CityHallTracker.Migrations
                     b.Property<int>("CouncilMemberId")
                         .HasColumnType("int");
 
+                    b.Property<string>("CouncilMembersVote")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
                     b.HasKey("CouncilActionCouncilMemberId");
 
                     b.HasIndex("CouncilActionId");
 
-                    b.HasIndex("CouncilMemberId", "CouncilActionId")
-                        .IsUnique();
+                    b.HasIndex("CouncilMemberId");
 
                     b.ToTable("CouncilActionCouncilMember");
+
+                    b.HasData(
+                        new
+                        {
+                            CouncilActionCouncilMemberId = 1,
+                            CouncilActionId = 1,
+                            CouncilMemberId = 8,
+                            CouncilMembersVote = "Yes"
+                        },
+                        new
+                        {
+                            CouncilActionCouncilMemberId = 2,
+                            CouncilActionId = 1,
+                            CouncilMemberId = 9,
+                            CouncilMembersVote = "Yes"
+                        },
+                        new
+                        {
+                            CouncilActionCouncilMemberId = 3,
+                            CouncilActionId = 1,
+                            CouncilMemberId = 11,
+                            CouncilMembersVote = "Yes"
+                        },
+                        new
+                        {
+                            CouncilActionCouncilMemberId = 4,
+                            CouncilActionId = 1,
+                            CouncilMemberId = 4,
+                            CouncilMembersVote = "Yes"
+                        },
+                        new
+                        {
+                            CouncilActionCouncilMemberId = 5,
+                            CouncilActionId = 1,
+                            CouncilMemberId = 6,
+                            CouncilMembersVote = "Yes"
+                        },
+                        new
+                        {
+                            CouncilActionCouncilMemberId = 6,
+                            CouncilActionId = 1,
+                            CouncilMemberId = 2,
+                            CouncilMembersVote = "Yes"
+                        },
+                        new
+                        {
+                            CouncilActionCouncilMemberId = 7,
+                            CouncilActionId = 1,
+                            CouncilMemberId = 7,
+                            CouncilMembersVote = "Yes"
+                        });
                 });
 
             modelBuilder.Entity("CityHallTracker.Models.CouncilMember", b =>
@@ -157,6 +223,96 @@ namespace CityHallTracker.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("CouncilMembers");
+
+                    b.HasData(
+                        new
+                        {
+                            CouncilMemberId = 1,
+                            CouncilMemberDistrict = 1,
+                            CouncilMemberEndDate = "December 31, 2023",
+                            CouncilMemberName = "Eliana Macias",
+                            CouncilMemberStartDate = "January 7, 2020"
+                        },
+                        new
+                        {
+                            CouncilMemberId = 2,
+                            CouncilMemberDistrict = 2,
+                            CouncilMemberEndDate = "December 31, 2021",
+                            CouncilMemberName = "Jason White",
+                            CouncilMemberStartDate = "January 2, 2018"
+                        },
+                        new
+                        {
+                            CouncilMemberId = 3,
+                            CouncilMemberDistrict = 3,
+                            CouncilMemberEndDate = "December 31, 2023",
+                            CouncilMemberName = "Patricia Byers",
+                            CouncilMemberStartDate = "January 7, 2020"
+                        },
+                        new
+                        {
+                            CouncilMemberId = 4,
+                            CouncilMemberDistrict = 4,
+                            CouncilMemberEndDate = "December 31, 2021",
+                            CouncilMemberName = "Kay Funk",
+                            CouncilMemberStartDate = "January 2, 2018"
+                        },
+                        new
+                        {
+                            CouncilMemberId = 5,
+                            CouncilMemberDistrict = 5,
+                            CouncilMemberEndDate = "December 31, 2023",
+                            CouncilMemberName = "Soneya Lund",
+                            CouncilMemberStartDate = "January 7, 2020"
+                        },
+                        new
+                        {
+                            CouncilMemberId = 6,
+                            CouncilMemberDistrict = 6,
+                            CouncilMemberEndDate = "December 31, 2021",
+                            CouncilMemberName = "Brad Hill",
+                            CouncilMemberStartDate = "January 2, 2018"
+                        },
+                        new
+                        {
+                            CouncilMemberId = 7,
+                            CouncilMemberDistrict = 7,
+                            CouncilMemberEndDate = "December 31, 2023",
+                            CouncilMemberName = "Holly Cousens",
+                            CouncilMemberStartDate = "January 7, 2020"
+                        },
+                        new
+                        {
+                            CouncilMemberId = 8,
+                            CouncilMemberDistrict = 5,
+                            CouncilMemberEndDate = "December 31, 2019",
+                            CouncilMemberName = "Kathy Coffey",
+                            CouncilMemberStartDate = "January 5, 2016"
+                        },
+                        new
+                        {
+                            CouncilMemberId = 9,
+                            CouncilMemberDistrict = 3,
+                            CouncilMemberEndDate = "December 31, 2019",
+                            CouncilMemberName = "Carmen Mendez",
+                            CouncilMemberStartDate = "January 5, 2016"
+                        },
+                        new
+                        {
+                            CouncilMemberId = 10,
+                            CouncilMemberDistrict = 1,
+                            CouncilMemberEndDate = "December 31, 2019",
+                            CouncilMemberName = "Avina Gutierrez",
+                            CouncilMemberStartDate = "January 5, 2016"
+                        },
+                        new
+                        {
+                            CouncilMemberId = 11,
+                            CouncilMemberDistrict = 2,
+                            CouncilMemberEndDate = "December 31, 2019",
+                            CouncilMemberName = "Dulce Gutierrez",
+                            CouncilMemberStartDate = "January 5, 2016"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>

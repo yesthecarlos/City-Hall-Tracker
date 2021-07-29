@@ -1,0 +1,19 @@
+@{
+  Layout = "_Layout";
+}
+
+@model CityHallTracker.Models.CouncilMember
+
+<h4>Add a new Councilmember</h4>
+
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(model => model.CouncilMemberName)
+    @Html.TextBoxFor(model => model.CouncilMemberName, new { @class = "text", required = "required" })
+
+    @Html.Label("Select Council Action")
+    @Html.DropDownList("CouncilActionId")
+
+    <input type="submit" value="Add new Councilmember" class="btn btn-default" />
+}
+<p>@Html.ActionLink("Show all Councilmembers", "Index")</p>
