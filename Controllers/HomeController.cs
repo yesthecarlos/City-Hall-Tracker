@@ -5,9 +5,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using City_Hall_Tracker.Models;
+using CityHallTracker.Models;
 
-namespace City_Hall_Tracker.Controllers
+namespace CityHallTracker.Controllers
 {
     public class HomeController : Controller
     {
@@ -17,7 +17,7 @@ namespace City_Hall_Tracker.Controllers
         {
             _logger = logger;
         }
-
+        [HttpGet("/")]
         public IActionResult Index()
         {
             return View();

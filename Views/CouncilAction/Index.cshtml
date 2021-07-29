@@ -1,0 +1,19 @@
+@{
+  Layout = "_Layout";
+}
+
+@using CityHallTracker.Models;
+
+<h1>Council Actions</h1>
+
+@if (@Model.Count == 0)
+{
+  <h3>No actions here!</h3>
+} 
+
+@foreach (CouncilAction CouncilAction in Model)
+{
+  <li>@Html.ActionLink($"{CouncilAction.CouncilActionTitle}", "Details", new { id = CouncilAction.CouncilActionId })</li>
+}
+<p>@Html.ActionLink("Add new CouncilAction", "Create")</p>
+<p>@Html.ActionLink("Home", "Index", "Home")</p>

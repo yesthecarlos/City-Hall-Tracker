@@ -1,6 +1,6 @@
 using System;
 
-namespace City_Hall_Tracker.Models
+namespace CityHallTracker.Models
 {
     public class ErrorViewModel
     {

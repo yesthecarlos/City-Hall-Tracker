@@ -15,7 +15,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "City_Hall_Tracker": {
+    "CityHallTracker": {
       "commandName": "Project",
       "dotnetRunMessages": "true",
       "launchBrowser": true,
