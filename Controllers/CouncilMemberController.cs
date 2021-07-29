@@ -41,9 +41,9 @@ namespace CityHallTracker.Controllers
     [HttpPost]
     public async Task<ActionResult> Create(CouncilMember CouncilMember, int CouncilActionId)
     {
-      var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-      var currentUser = await _userManager.FindByIdAsync(userId);
-      CouncilMember.User = currentUser;
+      // var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+      // var currentUser = await _userManager.FindByIdAsync(userId);
+      // CouncilMember.User = currentUser;
       _db.CouncilMembers.Add(CouncilMember);
       _db.SaveChanges();
       if (CouncilActionId != 0)
@@ -60,6 +60,8 @@ namespace CityHallTracker.Controllers
           .Include(CouncilMember => CouncilMember.JoinEntities)
           .ThenInclude(join => join.CouncilAction)
           .FirstOrDefault(CouncilMember => CouncilMember.CouncilMemberId == id);
+      ViewBag.CouncilActionId = new SelectList(_db.CouncilActionCouncilMember, "CouncilActionId", "CouncilMembersVote");
+
       return View(thisCouncilMember);
   }
 

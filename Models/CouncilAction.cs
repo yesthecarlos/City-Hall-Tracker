@@ -17,9 +17,17 @@ namespace CityHallTracker.Models
 
       [Required]
       public int CouncilActionId { get; set; }
+
+      [Display(Name="Council Action")]
       public string CouncilActionTitle { get; set; }
+
+      [Display(Name="Date")]
       public string CouncilActionDate { get; set; }
+
+      [Display(Name="Category")]
       public string CouncilActionTag { get; set; }
+
+      [Display(Name="Related News Article")]
       public string CouncilActionContextLink { get; set; }
 
       public virtual ICollection<CouncilActionCouncilMember> JoinEntities { get; set; }

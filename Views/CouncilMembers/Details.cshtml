@@ -6,7 +6,9 @@
 
 <h2>Councilmember Details</h2>
 <hr />
-<h3>@Html.DisplayNameFor(model => model.CouncilMemberName): @Html.DisplayFor(model => model.CouncilMemberName)</h3>
+<h3>@Html.DisplayFor(model => model.CouncilMemberName)</h3>
+  <img src= "@Url.Content(Model.CouncilMemberPhoto)" alt="Image" />
+
 
 @if(@Model.JoinEntities.Count == 0)
 {
@@ -18,13 +20,13 @@ else
   <ul>
   @foreach(var join in Model.JoinEntities)
   {
-    <li>@join.CouncilAction.CouncilActionTitle</li>
+    <li>@join.CouncilAction.CouncilActionTitle <span class ="text-orientation-right-css">@ViewBag.CouncilActionId</span></li>
   }
   </ul>
 }
 
-<p>@Html.ActionLink("Add a Council Action", "AddCouncilAction", new { id = Model.CouncilMemberId })</p>
+@* <p>@Html.ActionLink("Add a Council Action", "AddCouncilAction", new { id = Model.CouncilMemberId })</p> *@
 
 <p>@Html.ActionLink("Back to list", "Index")</p>
 <p>@Html.ActionLink("Edit Councilmember", "Edit", new { id = Model.CouncilMemberId })</p>
-<p>@Html.ActionLink("Delete CouncilMmmber", "Delete", new { id = Model.CouncilMemberId })</p>
+<p>@Html.ActionLink("Delete Councilmember", "Delete", new { id = Model.CouncilMemberId })</p>

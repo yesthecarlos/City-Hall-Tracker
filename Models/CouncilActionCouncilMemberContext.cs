@@ -28,17 +28,17 @@ namespace CityHallTracker.Models
 
       builder.Entity<CouncilMember>()
         .HasData(
-          new CouncilMember { CouncilMemberId = 1, CouncilMemberName = "Eliana Macias", CouncilMemberDistrict = 1, CouncilMemberStartDate = "January 7, 2020", CouncilMemberEndDate = "December 31, 2023" },
-          new CouncilMember { CouncilMemberId = 2, CouncilMemberName = "Jason White", CouncilMemberDistrict = 2, CouncilMemberStartDate = "January 2, 2018", CouncilMemberEndDate = "December 31, 2021" },
-          new CouncilMember { CouncilMemberId = 3, CouncilMemberName = "Patricia Byers", CouncilMemberDistrict = 3, CouncilMemberStartDate = "January 7, 2020", CouncilMemberEndDate = "December 31, 2023" },
-          new CouncilMember { CouncilMemberId = 4, CouncilMemberName = "Kay Funk", CouncilMemberDistrict = 4, CouncilMemberStartDate = "January 2, 2018", CouncilMemberEndDate = "December 31, 2021" },
-          new CouncilMember { CouncilMemberId = 5, CouncilMemberName = "Soneya Lund", CouncilMemberDistrict = 5, CouncilMemberStartDate = "January 7, 2020", CouncilMemberEndDate = "December 31, 2023" },
-          new CouncilMember { CouncilMemberId = 6, CouncilMemberName = "Brad Hill", CouncilMemberDistrict = 6, CouncilMemberStartDate = "January 2, 2018", CouncilMemberEndDate = "December 31, 2021" },
-          new CouncilMember { CouncilMemberId = 7, CouncilMemberName = "Holly Cousens", CouncilMemberDistrict = 7, CouncilMemberStartDate = "January 7, 2020", CouncilMemberEndDate = "December 31, 2023" },
-          new CouncilMember { CouncilMemberId = 8, CouncilMemberName = "Kathy Coffey", CouncilMemberDistrict = 5, CouncilMemberStartDate = "January 5, 2016", CouncilMemberEndDate = "December 31, 2019" },
-          new CouncilMember { CouncilMemberId = 9, CouncilMemberName = "Carmen Mendez", CouncilMemberDistrict = 3, CouncilMemberStartDate = "January 5, 2016", CouncilMemberEndDate = "December 31, 2019" },
-          new CouncilMember { CouncilMemberId = 10, CouncilMemberName = "Avina Gutierrez", CouncilMemberDistrict = 1, CouncilMemberStartDate = "January 5, 2016", CouncilMemberEndDate = "December 31, 2019" },
-          new CouncilMember { CouncilMemberId = 11, CouncilMemberName = "Dulce Gutierrez", CouncilMemberDistrict = 2, CouncilMemberStartDate = "January 5, 2016", CouncilMemberEndDate = "December 31, 2019" }
+          new CouncilMember { CouncilMemberId = 1, CouncilMemberName = "Eliana Macias", CouncilMemberDistrict = 1, CouncilMemberStartDate = "January 7, 2020", CouncilMemberEndDate = "December 31, 2023", CouncilMemberPhoto = "https://www.yakimawa.gov/council/assets/macias.jpg" },
+          new CouncilMember { CouncilMemberId = 2, CouncilMemberName = "Jason White", CouncilMemberDistrict = 2, CouncilMemberStartDate = "January 2, 2018", CouncilMemberEndDate = "December 31, 2021", CouncilMemberPhoto = "https://www.yakimawa.gov/council/assets/jason-white.jpg" },
+          new CouncilMember { CouncilMemberId = 3, CouncilMemberName = "Patricia Byers", CouncilMemberDistrict = 3, CouncilMemberStartDate = "January 7, 2020", CouncilMemberEndDate = "December 31, 2023", CouncilMemberPhoto = "https://www.yakimawa.gov/council/assets/byers.jpg" },
+          new CouncilMember { CouncilMemberId = 4, CouncilMemberName = "Kay Funk", CouncilMemberDistrict = 4, CouncilMemberStartDate = "January 2, 2018", CouncilMemberEndDate = "December 31, 2021", CouncilMemberPhoto = "https://www.yakimawa.gov/council/assets/kay-funk.jpg" },
+          new CouncilMember { CouncilMemberId = 5, CouncilMemberName = "Soneya Lund", CouncilMemberDistrict = 5, CouncilMemberStartDate = "January 7, 2020", CouncilMemberEndDate = "December 31, 2023", CouncilMemberPhoto = "https://www.yakimawa.gov/council/assets/lund.jpg" },
+          new CouncilMember { CouncilMemberId = 6, CouncilMemberName = "Brad Hill", CouncilMemberDistrict = 6, CouncilMemberStartDate = "January 2, 2018", CouncilMemberEndDate = "December 31, 2021", CouncilMemberPhoto = "https://www.yakimawa.gov/council/assets/brad-hill.jpg" },
+          new CouncilMember { CouncilMemberId = 7, CouncilMemberName = "Holly Cousens", CouncilMemberDistrict = 7, CouncilMemberStartDate = "January 7, 2020", CouncilMemberEndDate = "December 31, 2023", CouncilMemberPhoto = "https://www.yakimawa.gov/council/assets/holly-cousens-1.jpg" },
+          new CouncilMember { CouncilMemberId = 8, CouncilMemberName = "Kathy Coffey", CouncilMemberDistrict = 5, CouncilMemberStartDate = "January 5, 2016", CouncilMemberEndDate = "December 31, 2019", CouncilMemberPhoto = "https://www.yakimawa.gov/council/assets/Kathy-Coffey-500.jpg" },
+          new CouncilMember { CouncilMemberId = 9, CouncilMemberName = "Carmen Mendez", CouncilMemberDistrict = 3, CouncilMemberStartDate = "January 5, 2016", CouncilMemberEndDate = "December 31, 2019", CouncilMemberPhoto = "https://www.yakimawa.gov/council/assets/carmen-mendez-1.jpg" },
+          new CouncilMember { CouncilMemberId = 10, CouncilMemberName = "Avina Gutierrez", CouncilMemberDistrict = 1, CouncilMemberStartDate = "January 5, 2016", CouncilMemberEndDate = "December 31, 2019", CouncilMemberPhoto = "https://seattleglobalist.com/wp-content/uploads/2016/01/Avina_Gutierrez-e1452286695271.jpg" },
+          new CouncilMember { CouncilMemberId = 11, CouncilMemberName = "Dulce Gutierrez", CouncilMemberDistrict = 2, CouncilMemberStartDate = "January 5, 2016", CouncilMemberEndDate = "December 31, 2019", CouncilMemberPhoto = "https://www.yakimawa.gov/council/assets/dulce-gutierrez.jpg" }
         );
 
       builder.Entity<CouncilAction>()

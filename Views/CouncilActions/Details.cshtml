@@ -4,9 +4,12 @@
 
 @model CityHallTracker.Models.CouncilAction;
 
-<h2>CouncilAction Details</h2>
+<h2>Council Action Details</h2>
 <hr />
 <h3>@Html.DisplayNameFor(model => model.CouncilActionTitle): @Html.DisplayFor(model => model.CouncilActionTitle)</h3>
+<h5>@Html.DisplayNameFor(model => model.CouncilActionDate): @Html.DisplayFor(model => model.CouncilActionDate) </h5>
+<h5>@Html.DisplayNameFor(model => model.CouncilActionTag): @Html.DisplayFor(model => model.CouncilActionTag) </h5>
+<h5>@Html.DisplayNameFor(model => model.CouncilActionContextLink): @Html.DisplayFor(model => model.CouncilActionContextLink) </h5>
 
 @if(@Model.JoinEntities.Count == 0)
 {

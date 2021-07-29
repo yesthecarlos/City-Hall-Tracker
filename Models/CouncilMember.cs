@@ -20,9 +20,17 @@ namespace CityHallTracker.Models
       [Display(Name="Councilmember")]
       [Required]
       public string CouncilMemberName { get; set; }
+
+      [Display(Name="District")]
       public int CouncilMemberDistrict { get; set; }
+
+      [Display(Name="Sworn In")]
       public string CouncilMemberStartDate { get; set; }
+
+      [Display(Name="End of Term")]
       public string CouncilMemberEndDate { get; set; }
+      
+      public string CouncilMemberPhoto { get; set; }
       public virtual ICollection<CouncilActionCouncilMember> JoinEntities { get; set; }
     }
 }

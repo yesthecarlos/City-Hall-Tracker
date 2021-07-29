@@ -5,10 +5,22 @@
 @model CityHallTracker.Models.CouncilAction
 
 <h4>Add a new Council Action</h4>
-@using (Html.BeginForm())
+<p>@using (Html.BeginForm())
 {
-  @Html.LabelFor(model => model.CouncilActionTitle)
-  @Html.TextBoxFor(model => model.CouncilActionTitle, new { @class = "text", required = "required" })
+  <p>@Html.LabelFor(model => model.CouncilActionTitle)
+  @Html.TextBoxFor(model => model.CouncilActionTitle, new { @class = "text", required = "required" })</p>
+
+  <p>@Html.LabelFor(model => model.CouncilActionDate)
+  @Html.TextBoxFor(model => model.CouncilActionDate, new { @class = "text", required = "required" })</p>
+
+  <p>@Html.LabelFor(model => model.CouncilActionTag)
+  @Html.TextBoxFor(model => model.CouncilActionTag, new { @class = "text", required = "required" })</p>
+
+  <p>@Html.LabelFor(model => model.CouncilActionContextLink)
+  @Html.TextBoxFor(model => model.CouncilActionContextLink, new { @class = "text" })</p>
+
+  
+
   <input type="submit" value="Add new Council Action" />
-}
+}</p>
 <p>@Html.ActionLink("Show all Council Actions", "Index")</p>
