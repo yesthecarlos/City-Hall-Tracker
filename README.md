@@ -11,8 +11,6 @@
 * Entity Framework Core 5
 * Identity 
 * MySQL
-* Heroku?
-
 
 ## Description
 
@@ -46,8 +44,6 @@ _This project uses dotnet new mvc to bootstrap a program that allows the user to
     * Run the command `dotnet run` to run the project
     * Finally, open the project in your web browser, using the specified address (default is localhost:5000)
 
-
-(Likely moving to heroku deployment)
 
 ## Known Bugs
 
